@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta name="theme-color" content="#070b14">
+
+    <title>Quanto você conhece o Arthur?</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <h1>Quanto você conhece o Arthur?</h1>
+
+        <!-- TELA 1: NOME -->
+        <form id="formulario">
+            <label for="nome">Qual é o seu nome?</label>
+
+            <input
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Digite seu nome ou apelido"
+                autocomplete="given-name"
+                maxlength="40"
+                required
+            >
+
+            <p style="font-size: 14px; color: #96a8c3;">
+                Ao terminar o quiz, seu nome, sua resposta
+                escrita e sua pontuação serão enviados para Arthur.
+            </p>
+
+            <button type="submit">Avançar</button>
+        </form>
+
+        <!-- TELA 2: PERGUNTA ESCRITA -->
+        <section id="apresentacao" hidden>
+            <h2 id="titulo-apresentacao"></h2>
+
+            <form id="formulario-opiniao">
+                <label for="opiniao" class="pergunta-inicial">
+                    O quanto você acha que me conhece?
+                    E por que você acha isso?
+                </label>
+
+                <textarea
+                    id="opiniao"
+                    name="opiniao"
+                    placeholder="Acho que te conheço..."
+                    rows="4"
+                    maxlength="600"
+                    required
+                ></textarea>
+
+                <button type="submit">Começar o quiz</button>
+            </form>
+        </section>
+
+        <!-- TELA 3: QUIZ -->
+        <section id="quiz" hidden>
+            <h2 id="boas-vindas"></h2>
+
+            <p id="progresso"></p>
+
+            <h3 id="pergunta" tabindex="-1"></h3>
+
+            <div
+                id="alternativas"
+                role="group"
+                aria-labelledby="pergunta"
+            ></div>
+
+            <p
+                id="feedback"
+                role="status"
+                aria-live="polite"
+            ></p>
+
+            <button id="proxima" type="button" disabled>
+                Próxima pergunta
+            </button>
+        </section>
+
+        <!-- TELA 4: RESULTADO -->
+        <section id="resultado" hidden>
+            <h2 id="titulo-resultado" tabindex="-1"></h2>
+
+            <p id="pontuacao"></p>
+
+            <p id="mensagem-final"></p>
+
+            <p id="frase-discreta">
+                Alguns detalhes a gente guarda de quem nem
+                imagina o espaço que ocupa.
+            </p>
+
+            <section id="revisao" aria-labelledby="titulo-revisao">
+                <h3 id="titulo-revisao"></h3>
+
+                <div id="lista-erros"></div>
+            </section>
+
+            <p
+                id="status-envio"
+                role="status"
+                aria-live="polite"
+            ></p>
+
+            <button id="reiniciar" type="button">
+                Jogar novamente
+            </button>
+        </section>
+    </main>
+</body>
+</html>
